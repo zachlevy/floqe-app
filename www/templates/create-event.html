@@ -1,0 +1,83 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="Floqe">
+	<ion-nav-buttons side="right">
+		  <button class="button button-clear button-positive" ng-click="next()" >
+			Invite
+		  </button>
+	</ion-nav-buttons>
+	<ion-content class="padding">
+	<script type="text/ng-template" id="autocomplete.html">
+
+			<a>
+			 <b>{{match.model.name}}</b> <i>({{match.model.city}})</i>
+			 </a>
+	</script>
+	
+		<button class="button button-block button-positive" ng-click="addBefore()">
+				 + Event Before
+		</button>
+		<img id="spinner" ng-src="img/ajax-loader.gif" ng-if="loading">
+		<ion-item ng-repeat="event in sequence" on-swipe-left="remove(event.id)">
+			<div class="list card" id="create-event" >
+				
+				<input type="text" ng-model="event.name" placeholder="Event Name" class="special-input" >
+				<img class='inline-spinner' ng-src="img/ajax-loader.gif" ng-if="loading2">
+				<input type="text" ng-model="event.location" ng-change="search(event.location)" placeholder="Location or Venue"  class="special-input" 
+				typeahead="c as c.name for c in events($viewValue) | filter:$viewValue |limitTo:10" typeahead-min-length='2'
+				typeahead-template-url="autocomplete.html" >
+				
+				<div  class="button-bar">
+				<a class="button {{date.today}}" ng-model="event.date" ng-click="datePick(0, event)">Today</a>
+				<a class="button {{date.tomorrow}}" ng-model="event.date" ng-click="datePick(1, event)">Tmrw</a>
+				<a class="button {{date.other}}"  ng-click="datePick(2)">Other</a>
+				</div>
+				<label ng-if="date.other.length >0"  class="item item-input">
+					<span class="input-label">Date</span>
+					<input type="date" ng-model="event.date">
+				</label>
+				<label class="item item-input">
+				  <span class="input-label">Time</span>
+				  <input type="time"
+						 ng-model="event.time">
+				</label>
+				<label class="item item-input item-select">
+					<div class="input-label" >
+					  Event Type
+					</div>
+					<select ng-model="event.event_type" ng-options="foo.type for foo in event_types">
+					</select>
+				</label>
+				<li ng-show="type == 'Pre'" class="item item-checkbox">
+					<label class="checkbox">
+					<input  type="checkbox" ng-model="event.byob" ng-checked="event.byob">
+					</label>
+					BYOB
+				</li>
+				<li ng-show="type == 'Club'" class="item item-checkbox">
+					<label class="checkbox">
+					<input  type="checkbox" ng-model="event.fancy" ng-checked="event.fancy">
+					</label>
+					Stricter Dress Code
+				</li>
+				<div  class="button-bar">
+				  <a class="button {{privacy.secret}}" ng-click="privacyPicker(event,0)">Private</a>
+				  <a class="button {{privacy.friends}}" ng-click="privacyPicker(event,1)">Friends</a>
+				  <a class="button {{privacy.open}}" ng-click="privacyPicker(event,2)">Open</a>
+				</div>
+				<label class="item item-input">
+					<textarea ng-model="event.details"placeholder="Details (optional)"></textarea>
+				 </label>
+				
+			</div>
+				
+		</ion-item>
+			<button class="button button-block button-positive" ng-click="addAfter()">
+					+ Event After
+			</button>
+  </ion-content>
+</ion-view>

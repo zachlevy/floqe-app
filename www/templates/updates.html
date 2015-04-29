@@ -1,0 +1,30 @@
+<ion-view title="Updates">
+	<ion-content class="padding item-background">
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input  type="search" ng-model='searchStr'  placeholder="Search">
+		</label>
+		<ion-scroll style="height:300px">
+			<div class="list card" ng-repeat="event in events| orderBy: 'time' : true | filter: searchStr" >
+				<div class="item item-avatar" ng-click="hrefDiv(event)">
+					<img src="img/logo-blue.png">
+					<h2><b>{{ event.name }}</b></h2>
+					{{event.location}}
+				</div>
+				<div class="item tag-container" >
+					<label class="tag-small" ng-if="event.tags.length >0" ng-repeat="tag in event.tags"> {{tag.name}} </label>
+				</div>
+				<div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item" href='#/tab/events/{{event.id}}'>
+					  <i class="icon ion-thumbsup"></i>
+					  Attend
+					</a>
+					<a class="tab-item" >
+					  <i class="icon ion-share"></i>
+					  Share
+					</a>
+				</div>
+			</div>
+		</ion-scroll>
+	</ion-content>
+</ion-view>

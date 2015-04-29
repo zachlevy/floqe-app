@@ -1,0 +1,43 @@
+<ion-view title="Floqe">
+  <ion-content  scroll="false" class="padding">
+	
+		<div align="center">
+			<h4><b>{{form().name}}</b></h4>
+		</div>
+		<div class="row">
+			<div class="col col-50 ">
+				<a type="button" class="button button-outline {{map_button}} icon-right ion-map full-width" ng-click="view_map()">
+					<h5 class="positive">{{venue.address}} </h5>
+				</a>
+			</div>
+			<div class="col col-50 "><h5 class="padding-left">{{form().date}} <br> {{form().time}}</h5></div>
+		</div>
+		<div class="padding-vertical" ng-if="form().details.length >0" class="row">
+			<b>Details:</b>{{form().details}}
+			
+		</div>
+		
+		<div class="row">
+			<div class="col col-100 ">
+			<a type="button" class="button button-outline  {{style.colour }}  icon-right {{style.icon}} full-width" ng-click="attending()" > {{style.text}} </a>
+			</div>
+		</div>
+		<div class="row">
+
+			<div class="col col-33 positive"><b>Going:</b> {{states.yes}}</div>
+			<div class="col col-33 energized"><b>No Reply:</b> {{states.noreply}}</div>
+			<div class="col col-33 assertive"><b>Declined:</b> {{states.no}}</div>
+		</div>
+		
+		<ion-scroll style="height:75%">
+			<ion-item ng-repeat="friend in friends | groupTypes: group_type.type| orderBy:'state.substr(1,2)'" type="item-text-wrap" ng-class="{{friend.state}}"  href="#/tab/friend/{{friend.id}}">
+			<div  class="row">			
+				<div class="col-100 {{friend.state}}">
+					&nbsp;{{friend.name}} <br>
+					
+				</div>
+			</div>
+			</ion-item>
+		</ion-scroll>
+  </ion-content>
+</ion-view>

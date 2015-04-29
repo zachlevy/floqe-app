@@ -1,0 +1,28 @@
+<ion-view hide-back-button="true"  title="Floqe">
+  <ion-content scroll="false" class="padding">
+		<div align="center">
+			<h4>{{ping.name}}</h4>
+			<h5>You pinged at {{ping.time}}</h5>
+		</div>
+		<div class="row">
+			<div class="col col-20 col-offset-20"><i class="icon ion-checkmark balanced"></i> {{states.yes}}</div>
+			<div class="col col-20"><i class="icon ion-help energized"></i> {{states.noreply}}</div>
+			<div class="col col-20"><i class="icon ion-close assertive"></i> {{states.no}}</div>
+		</div>
+		<div align="center">
+			<button class="button button-balanced"> Convert to Event </button>
+		</div>
+		
+		<ion-scroll style="height:75%">
+			<ion-item ng-repeat="friend in friends | groupTypes: group_type.type| orderBy:'state.substr(1,2)'" type="item-text-wrap" ng-class="{{friend.state}}"  href="#/tab/friend/{{friend.id}}">
+				<div  class="row">			
+					<div class="col-100 {{friend.state}}">
+						&nbsp;{{friend.name}} <br>	
+					</div>
+				</div>
+			</ion-item>
+		
+		</ion-scroll>
+		</div>
+  </ion-content>
+</ion-view>

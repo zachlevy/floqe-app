@@ -1,0 +1,53 @@
+<ion-view title="Floqe">
+  <ion-content  scroll="false" class="padding">
+	
+		<div align="center">
+			<h4><b>{{form.name}}</b> {{form.type}}</h4>
+		
+		</div>
+		
+		<div class="row">
+			<div class="col col-50" ng-if="form.music.length >0">
+				<h4><b>Music:</b> {{form.music}}</h4>
+			</div>
+			<div class="col col-50 " ng-if="form.style.length >0" >
+				<h4><b>Type:</b> {{form.style}}</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-66 col-offset-20">
+						<h4>Dress Code:
+						<i class="icon ion-star positive"></i>
+						<i class="icon ion-star positive" ng-if="form.dresscode > 1"></i>
+						<i class="icon ion-star positive" ng-if="form.dresscode > 2"></i>
+						<i class="icon ion-star positive" ng-if="form.dresscode > 3"></i>
+						</h4>
+			</div>
+		</div>
+		<div ng-if="form.attraction.length >0" class="row">
+			<h4><b>Attraction: </b>{{form.attraction}}</h4>
+		</div>
+		<div class="row">
+			<div class="col col-100 ">
+				<a type="button" class="button button-outline button-positive icon-right ion-map full-width" ng-click="view_map()">
+					<h4>{{form.address}} </h4>
+				</a>
+			</div>
+
+		</div>
+		<div ng-if="form.about.length >0" class="row">
+			<p><b>Info:</b> {{form.about}}</p>
+		</div>
+		
+		<ion-scroll style="height:75%">
+			<ion-item ng-repeat="event in form.events " type="item-text-wrap" ng-click="eventSelect(event)">
+				<div  class="row">
+					<div class="col-80">
+						<h3><b>{{event.name}}</b></h3>
+						<h4>@{{event.time}}</h4>
+					</div >
+				</div>
+			</ion-item>
+		</ion-scroll>
+  </ion-content>
+</ion-view>
