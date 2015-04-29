@@ -1,0 +1,49 @@
+<ion-view title="Contacts">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon button-clear {{modeIcon}}"  ng-click='contactsMode()'>
+		</button>
+	</ion-nav-buttons>
+  <ion-content>
+  <img id="spinner" ng-src="img/ajax-loader.gif" ng-if="loading">
+    <ion-list ng-if="friendsMode" show-delete="shouldShowDelete">
+		<ion-item ng-repeat="friend in friends() | groupTypes: group_type.type| orderBy:'state.substr(1,2)'" type="item-text-wrap" ng-class="{{friend.state}}"  href="#/tab/friend/{{friend.id}}">
+			<div  class="row">			
+				<div class="col-33">
+					<label class="toggle toggle-assertive" >
+						<input type="checkbox" ng-model='friend.block' ng-checked="friend.block"  ng-click="blockUpdate(friend)">
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+				</div>
+				<div class="col-67 {{friend.state}}">
+					&nbsp;{{friend.user}} <br>
+					<h6>&nbsp;&nbsp;{{friend.group}}<h6>
+				</div>
+			</div>
+			 <ion-option-button class="swipeButton button-assertive"
+                    ng-click="friends().splice($index, 1)">
+					Delete
+			</ion-option-button>
+		</ion-item>
+    </ion-list>
+	<ion-list ng-if="!friendsMode">
+		<ion-item ng-repeat="contact in contacts | orderBy:'-2'" type="item-text-wrap" >
+			<div  class="row">			
+				<div class="col-20">
+					<label class="" >
+						
+						<i class="icon ion-plus largeIcon positive"></i>
+				</div>
+				<div class="col-80">
+					&nbsp;{{contact.2}} <br>
+					<h4>&nbsp;&nbsp;{{contact.1}}</h4>
+				</div>
+			</div>
+
+		</ion-item>
+    </ion-list>
+
+  </ion-content>
+  
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view title="Floqe">
+<ion-nav-buttons side="right">
+	<ion-nav-buttons side="left">
+		</ion-nav-buttons>
+	   <button class="button button-clear" ng-click='next(name)'>Next</button>
+	</ion-nav-buttons>
+	<ion-content has-header="true" padding="true">
+		<div class='top-part'>
+			<div class='row'>
+				<div class="col col-100">
+					<label class="item item-input">
+						<input type="text" placeholder="Name or Info" ng-model="name" ng-change='chngName(name)'>
+					</label>
+				</div>
+			</div>
+			
+			<div class='row'>
+				<div class="col col-100">
+					<label class="item item-input">
+						<i class="icon ion-search placeholder-icon"></i>
+						<input  type="search" ng-model='searchStr'  placeholder="Tag Search">
+					</label>
+				</div>
+			</div>
+		</div>
+		<ion-scroll >
+			<button ng-repeat="item in tags | filter:searchStr:false" class="button {{item.style}} button-dark tag-button" ng-click='tagSelect(item)'>
+			  {{item.tag}}
+			</button>
+		</ion-scroll>
+
+	</ion-content>
+</ion-view>

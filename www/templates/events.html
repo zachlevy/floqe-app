@@ -1,0 +1,45 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+  
+  <ion-item ng-repeat="event in events | filter : event_type.type" type="item-text-wrap" href="">
+-->
+<ion-view title="Floqe">
+  <ion-content>
+  <div class="list">
+
+  <label class="item item-input item-select">
+	<div class="input-label">
+      Event Filter
+    </div>
+	<select ng-model='event_type' ng-options="event.type for event in event_types">
+	</select>
+  </label>
+
+</div>
+    <ion-list can-swipe="listCanSwipe"
+			  show-reorder="shouldShowReorder">
+		<ion-item ng-repeat="event in events | eventTypes:event_type.type" type="item-text-wrap" href="#/tab/events/{{event.id}}">
+		
+			<div ng-if="event.type == 'Club'">
+				<i class="icon ion-wineglass"></i> {{event.name}} 
+			</div >
+			<div ng-if="event.type == 'Bar'">
+				<i class="icon ion-beer"></i> {{event.name}} 
+			</div>
+			<div ng-if="event.type == 'Pre'">
+				<i class="ion-android-social"></i> {{event.name}} 
+			</div >
+			<div ng-if="event.type == 'Food'">
+				<i class="ion-pizza"></i> {{event.name}} 
+			</div>
+		</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+<script>
+	it('should check ng-options', function() {
+	}
+</script>

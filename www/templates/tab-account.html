@@ -1,0 +1,107 @@
+<ion-view title="Floqe">
+	<ion-content class="padding">
+	
+	<ul class="list">
+		<label class="item item-input">
+		  <span class="input-label">Day of birth</span>
+		  <input type="date">
+		</label>
+		<label class="item item-input">
+		<i class="icon ion-home placeholder-icon"></i>
+		<input type="text" placeholder="Hometown">
+	 </label>
+	</ul>
+	<h5><b>Status</b></h5>
+	<ul class="list">
+		<div class="row">
+			<div class="col col-50">
+				<li class="item item-checkbox">
+					<label class="checkbox">
+					<input id='girls' type="checkbox" ng-click="single=!single" ng-checked='single'>
+					</label>
+					Single
+				</li>
+			</div>
+			<div class="col col-50">
+				<li class="item item-checkbox">
+					<label class="checkbox">
+					<input id='girls' type="checkbox" ng-click="single=!single" ng-checked='!single'>
+					</label>
+					 Taken
+				</li>
+			</div>
+		</div>
+		<h6> Enables single related statistics</h6>
+	</ul>
+
+	<h5><b>Gender</b></h5>
+	<ul class="list">
+		<div class="row">
+			<div class="col col-50">
+				<li class="item item-checkbox">
+					<label class="checkbox">
+					<input id='girls' type="checkbox" ng-click="male=!male" ng-checked='male'>
+					</label>
+					<i class="icon ion-male"></i> M
+			</div>
+			<div class="col col-50">
+				<li class="item item-checkbox">
+					<label class="checkbox">
+					<input id='girls' type="checkbox" ng-click="male=!male" ng-checked='!male'>
+					</label>
+					<i class="icon ion-female"></i> F
+				</li>
+			</div>
+		</div>
+	</ul>
+	<h5><b>Interested In</b></h5>
+    <ul class="list">
+		<div class="row">
+			<div class="col col-50">
+				<li class="item item-checkbox">
+					<label class="checkbox">
+					<input id='guys' type="checkbox" ng-checked='guys'>
+					</label>
+					Guys
+				</li>
+			</div>
+			<div class="col col-50">
+				<li class="item item-checkbox">
+					<label class="checkbox">
+					<input id='girls' type="checkbox" ng-checked='girls'>
+					</label>
+					Girls
+				</li>
+			</div>
+	</ul>
+	<h5><b>Crowd Preference</b></h5>
+	<ul class="list">
+
+		<li class="item item-checkbox">
+			<label class="checkbox">
+			<input  type="checkbox" ng-click="student=!student" ng-checked='student'>
+			</label>
+			Student
+		</li>
+		<li class="item item-checkbox">
+			<label class="checkbox">
+			<input type="checkbox" ng-click="student=!student" ng-checked='!student'>
+			</label>
+			Professional
+		</li>
+	</ul>
+	<ul class="list">
+			</li>
+				<li class="item item-checkbox status" >
+			<label class="checkbox">
+			<input type="checkbox" ng-checked="visible()">
+			</label>
+			Visible
+		</li>
+	<h6> Visible to your contact list</h6>
+	</ul>
+	</ion-content>
+</ion-view>
+<script>
+
+</script>

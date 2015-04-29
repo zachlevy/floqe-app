@@ -1,0 +1,35 @@
+<ion-view title="Select People">
+	<ion-nav-buttons side="right">
+		  <button class="button button-clear button-positive" ng-click="submit()" >
+			Send
+		  </button>
+	</ion-nav-buttons>
+  <ion-content>
+  
+	<ul class="list">
+		<div class="item item-divider">
+		Groups
+		</div>
+		<li ng-repeat="group in groups" ng-click="invite(group.name)"  class="item item-checkbox">
+		 <label class="checkbox">
+		   <input type="checkbox">
+		 </label>
+		{{group.name}}
+		</li>
+		<div class="item item-divider">
+		People
+		</div>
+		<li ng-repeat="friend in friends" ng-click="invite(friend.id)"  class="item item-checkbox">
+		 <label class="checkbox">
+		   <input ng-model="friend.select" type="checkbox">
+		 </label>
+		{{friend.user}}
+
+		</li>
+	</ul>
+	
+
+
+  </ion-content>
+  
+</ion-view>
