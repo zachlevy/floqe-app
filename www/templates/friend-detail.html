@@ -1,0 +1,58 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="Floqe"> 
+  <ion-content has-header="true" padding="true"> 
+<div class="list">
+
+    <a class="item item-thumbnail-left" href="#">
+		<img src="img/logo-branch.png">
+		
+      <h2>{{friend.name}}</h2>
+      <p>{{friend.username}}</p>
+    </a>
+	<a class="item" >
+		<div class="row">
+		  <div class="col col-66" ng-if="friend.gender=='female'"><b>Gender:</b>&nbsp;&nbsp; Female <i class="ion-female"></i></div>
+		  <div class="col col-66" ng-if="friend.gender=='male'"><b>Gender:</b>&nbsp;&nbsp; Male <i class="ion-male"></i></div>
+		  <div class="col col-33"><b>Age:</b> {{friend.age}}</div>
+		</div>
+		<div class="row">
+			<div class="col col-100"><b>Relationship:</b> {{friend.relationship}}</div>
+		</div>
+	</a>
+	
+	<div class="block button button-block button-dark">
+	  <input type="radio" name="city" id="social" checked />   
+	  <label for="social"><span>Social</span></label>
+	  <div class="info">
+		<p align="left"><b>Attendance score: </b> <font class="balanced"> Reliable</font></p> 
+		<p align="left"><b>Favourite venue:</b> Ceeps</p> 
+		<p align="left"><b>Bar Star Ranking:</b> Up and Comer! (#8193)</p> 
+	  </div>
+	</div>
+	<div class="block button button-block button-dark">
+	  <input type="radio" name="city" id="previous" >
+	  <label for="previous"><span>Previous Events</span></label>
+	  <div class="info">
+		<ul class='list'>
+			<li class='item' ng-repeat='event in past'>
+				<div class="row">
+					<div class="col col-80">
+						<p align="left">{{event.name}}</p>
+					</div>
+					<div class="col col-20">
+						<h4 align="left"><b>{{event.date}}</b></h4>
+					</div>
+				</div>
+			</li>
+		</ul>
+	  </div>
+	</div>
+
+</div>
+  </ion-content>
+</ion-view>

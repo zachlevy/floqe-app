@@ -1,0 +1,29 @@
+<ion-view>
+	<ion-content has-header="true" padding="true">
+		<div style="padding-top:25%;" class="list">
+		  <label class="item item-input">
+			<span class="input-label">Username</span>
+			<input type="text" ng-model='username' >
+			
+		  </label>
+		  <label class="item item-input">
+			<span class="input-label">Password</span>
+			<input type="password">
+		  </label>
+		</div>
+		<div class="padding-vertical">
+			<button ng-click="login(username)" style="width:100%;"  class="button button-balanced">
+				Login
+			</button>
+		</div>
+		<div class="padding-vertical">
+			<button  style="width:100%;"  ng-click='FbLogin()' class="button button-positive"> <i class="icon ion-social-facebook"></i> Facebook Login
+			</button>
+		</div>
+		<div class="padding-vertical">
+			<button  style="width:100%;" ng-click='api()' class="button button-light"> Register
+			</button>
+		</div>
+		{{foo}}
+	</ion-content>
+</ion-view>

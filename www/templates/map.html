@@ -1,0 +1,72 @@
+<ion-view title="" onload='loaded()'>
+	<ion-nav-buttons side="right">
+		      <ion-nav-buttons side="left">
+		</ion-nav-buttons>
+	   <button ng-click="chngRds(3)" class="button {{rdsBut.3.style}}">3km</button>
+	   <button ng-click="chngRds(2)" class="button {{rdsBut.2.style}}" style="border-left-style: none;border-right-style: none;">1km</button>
+	   <button ng-click="chngRds(1)" class="button {{rdsBut.1.style}}">300m</button>
+	</ion-nav-buttons>
+	
+	<ion-content ng-show='mapMode' data-tap-disabled="true" class="padding item-background">
+		<div id="map_canvas">
+			<ui-gmap-google-map id='customMap' center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+					<ui-gmap-markers models="eventMarkers" coords="'self'" idKey="'id'" icon="'icon'" click="'onClick'" doCluster="true">
+					<ui-gmap-windows show="show">
+						<div class='markerInfo' ng-non-bindable>{{content}}</div>
+					</ui-gmap-windows>
+				</ui-gmap-markers>
+			</ui-gmap-google-map>
+		</div>
+	</ion-content>
+	
+	<ion-content ng-show='!mapMode' >
+		<div class="row">
+			<div class="col col-66 ">
+				<label id="search" class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input  type="search" ng-model='searchStr'  ng-change='search(searchStr)' placeholder="Search">
+				</label>
+			</div>
+			<div class="col col-33 ">
+				<button id="chngView" class="button button-full button-positive" ng-click="changeView()">
+				  {{modeBtn}}
+				</button>
+			</div>
+		</div>
+		<img id="spinner" class='padding' ng-src="img/ajax-loader.gif" ng-if="loading">
+		<ion-scroll>
+			<ion-list  can-swipe="listCanSwipe" show-reorder="shouldShowReorder" > 
+				<ion-item ng-repeat="event in events | orderBy:'attend.length':true | eventTypes:event_type.type " type="item-text-wrap" class='normal-list item' >
+					<div class="voting"  ng-if="event.class == 'Venue'">
+						<i  class="icon ion-chevron-up chevron" ng-click="upvote()"></i>
+						<span class="num-badge">0</span>
+						<i  class="icon ion-chevron-down chevron" ng-click="downvote()"></i>
+					</div>
+					<div class="row">
+						<div class="col col-90 " ng-click="selectItem(event)" ng-if="event.class == 'Event'">
+							<h2><b>{{event.name}}</b> </h2> 
+							<p ng-if="event.date.length>0"><i class="icon ion-calendar positive"></i>&nbsp;{{ event.date}} &nbsp;&nbsp; <i class="icon ion-clock positive"></i>&nbsp;{{ event.time}}</p>
+							<p ng-if="event.attend.length>0"><i class="icon ion-person positive"></i> Friends going: {{ event.attend.length}} </p>
+							<p ng-if="event.location.length>0"><i class="icon ion-location positive"></i> {{ event.location}} </p>
+							<p class='padding-top' ng-if="event.attend.length==0" ></p>
+						</div>
+						<div class="col col-80 " ng-click="selectItem(event)"  ng-if="event.class == 'Venue'"> 
+							<h2><b>{{event.name}}</b> </h2> 
+							<h2>
+							<font class='{{event.price_scale.1}}'>$</font>
+							<font class='{{event.price_scale.2}}'>$</font>
+							<font class='{{event.price_scale.3}}'>$</font>
+							<font class='{{event.price_scale.4}}'>$</font>
+							</h2>
+							<p ng-if="event.attend.length>0"><i class="icon ion-person positive"></i> Friends going: {{ event.attend.length}} </p>
+							<p ng-if="event.music.length>0"><i class="icon ion-music-note positive"></i>&nbsp;{{ event.music}} </p>
+							<p ng-if="event.style.length>0"><i class="icon ion-information-circled positive"></i>&nbsp;{{ event.style}} </p>
+							<p ng-if="event.attraction.length>0"><i class="icon ion-chatbox positive"></i>&nbsp;{{ event.attraction}} </p>
+							<p class='padding-top' ng-if="event.attraction.length==0 && event.style.length==0 &&event.music.length==0 && event.attend.length==0"></p>
+						</div>
+					</div>			
+				</ion-item>
+			</ion-list>
+		</ion-scroll>
+	</ion-content>
+</ion-view>

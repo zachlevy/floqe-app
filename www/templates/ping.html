@@ -1,0 +1,32 @@
+<ion-view title='Spotr'>
+	<ion-content has-header="true" padding="true">
+		<div class="list">
+			<a class="item item-icon-left" ng-click="next('Grab a Drink?')">
+			<i class="icon ion-beer"></i>
+			Grab a drink?
+			</a>
+
+			<a class="item item-icon-left" ng-click="next('Grab a Bite?')">
+			<i class="icon ion-pizza"></i>
+			Grab a bite?
+			</a>
+
+			<a class="item item-icon-left" ng-click="next('Going out tonight?')">
+			<i class="icon ion-wineglass"></i>
+			Going out tonight?
+			</a>
+			
+			<a class="item item-icon-left" ng-click="next('Watch the game?')" >
+			<i class="icon ion-person-stalker"></i>
+			Watch the game?
+			</a>
+			
+			<label class="item item-input">
+				<input type="text" placeholder="Your suggestion!" ng-model="name">
+			</label>
+			<button style="width:100%;"  class="button button-positive" ng-click="next(name)" >
+			Next
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,359 @@
+/* Empty. Add your own CSS if you like */
+
+html, body, #map_canvas {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+ion-item div div p {
+	margin:0;
+}
+
+.row .col h2 .stable  {
+	color: #CDCDCD;
+}
+
+div p i{
+	font-size: 133%
+}
+
+ion-scroll .tag-button {
+	margin: 5px 5px 0px 5px;
+}
+
+.tag-container {
+	white-space: normal;
+}
+
+.tag-small {
+	background: #4a87ee;
+	color: white;
+	padding: 2px 12px;
+	border-radius: .5em;
+	margin: 1px 3px;
+	display: inline-block;
+}
+
+#spinner {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inline-spinner {
+	display: block;
+	margin-left: 85%;
+	z-index: 2000;
+	position: absolute;
+}
+
+#map_canvas {
+	position: relative;
+}
+
+div .special-input {
+	padding: 20px 0 ;
+	font-size:  16px;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    cursor:pointer;
+}
+
+.typeahead {
+	z-index: 1051;
+	margin-top: 2px;
+	border-radius: 4px;
+}
+
+ion-item div ul li {
+	padding: 10px 5px;
+}
+
+.dropdown-menu {
+	font-size: larger;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 250px;
+	padding: 10px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+
+
+.angular-google-map-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+	
+.item-complex .item-content, .item-radio .lower-menu   {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}	
+	
+.list .item-radio .lower-menu-icon {
+	padding: 5px 20px 10px 14px;
+}	
+	
+.list .upper-menu {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+.list ion-item a a .badge{
+	top: 0px;
+	font-size: 1.5em ;
+	opacity: 0.75;
+
+}
+
+.gm-style-iw{
+	overflow:  auto, !important;
+	max-width: 300px;
+	min-height: 50px;
+	max-height: 175px;
+}
+
+.gm-style-iw > div {
+	overflow: auto, !important;
+	max-width: 300px;
+	min-height: 50px;
+	max-height: 175px;
+}
+
+
+ion-list div .normal-list{
+	padding: 2%;
+	font-size: 133%;	
+}
+
+#front-page {
+	background-color: rgb(137, 202, 255);
+	}
+	
+#front-logo  {
+	height: 200px;
+}
+
+.item-background {
+	background-color: rgb(236, 236, 236);
+	}
+
+.full-width {
+	width: 100%;
+	}
+	
+.marker-button {
+	width: 100%;
+	height: 20px;
+	}
+
+.front-text  {
+	padding-top: 33%;
+	}
+	
+.icon-logo  {
+	height: 15%;
+	width: 15%;
+	}
+	
+.front-icon {
+	font-size: 30px;
+	}
+	
+.icon-larger {
+	font-size: 25px;
+	}
+	
+.item-icon-left{
+	padding: 2em 4em;
+	}
+	
+	
+/* Events list css */
+ion-list div ion-item .voting .num-badge {
+	position: absolute;
+	z-index: 100;
+	font-size: 1.5em;
+	line-height: 1em;
+	float: right;
+	right: 20px;
+	padding-top: 22px;
+	}
+	
+div ion-item .voting .chevron {
+	position: absolute;
+	z-index: 100;
+	right: 10px;
+	top: 45px;
+	font-size: 40px;
+	opacity: .5;
+	
+}
+ion-list div ion-item .voting  .ion-chevron-up {
+	position: absolute;
+	top: 0px
+}
+	
+.list ion-item .item-content {
+	padding: 20px 0px;
+}
+	
+.row .col-67 h2 {
+	font-size: 20px;
+}
+
+#chngView {
+	margin:0;
+}
+	
+accordion .panel-group {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	min-height: 30px;
+	background-color: #f5f5f5;
+	color: #222;
+	font-weight: bold;
+	font-size: 16px;
+	border-color: #ddd;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 16px;
+}
+
+
+
+
+.block{
+	padding: 0;
+}
+
+/*   background: linear-gradient(#111, #333);
+  color: #fff;
+  padding-top: 5px;
+	border-top: solid 1px #444;
+padding-bottom: 8px;
+  box-shadow: 0 1px 2px #000;
+  line-height: 25px; */
+
+
+.block input[type='radio']:checked ~ .info{
+  height: 100%;
+  transition: .1s linear;
+}
+
+
+input[type='radio']{
+  display: none;
+}
+
+.block label{
+  cursor: pointer;
+  display: block;
+  font-size:150%;
+}
+.info .list .item {
+	padding: 0px 0px 0px 10px;
+}
+
+.info > span{
+	font-weight: bold;
+	white-space: nowrap;
+	padding-right: 90%;
+}
+.info{
+	background: #fff;
+	color: #222;
+	width: 100%;
+	height: 0;
+	display: block;
+	overflow: hidden;
+	box-sizing: border-box;
+		transition: .1s linear;
+} 
+
+.info p {
+	margin: 0;
+}
+
+h4{
+  color: #111;
+  text-shadow: 1px 1px 2px #fff;
+
+}
+
+h4 a{
+  color: #111;
+  text-decoration: none;
+}
+
+::selection{
+  background: #222;
+  color: #fff;
+}
+
+
+
+
+
+.markerInfo h5 {
+	margin-bottom: 0;
+
+}
+
+
+div .swipeButton {
+	padding-top: 30%;
+}
+
+.largeIcon {
+	font-size: 30px;
+}
+
+
+	
+#slide1 {
+	background-color: rgba(253, 105, 105, 0.9);
+	margin-top: 5%;
+	}
+	
+#slide2 {
+	background-color: rgb(0, 157, 255);
+	margin-top: 5%;
+	}
+	
+#slide3 {
+	background-color: rgba(0, 231, 12, 0.58);
+	margin-top: 5%;
+	}
+	
+#slide-boxes {
+	height:600px;
+	}
+	
+#create-event {
+	margin: 0;
+	}
